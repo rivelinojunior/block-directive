@@ -2,26 +2,39 @@
   'use strict';
 
   angular
-    .module('sgpp')
-    .directive('sgppBlock', SGPPBlock);
+    .module('riverjr.blockdisable', [])
+    .directive('blockDisable', BlockDisable);
 
-     /** @ngInject */
-    function SGPPBlock($filter) {
-      var ddo = {
+    function BlockDisable() {
+      var directive = {
         restrict: 'A',
-        scope: {},
         compile: compile
       };
 
-      return ddo;
+      return directive;
 
       function compile(element, attrs) {
-        var options = angular.fromJson(attrs['sgppBlockOptions']);
-
-        angular.forEach(options.elements, function(value) {
-          var children = element.find(value);
-          children.attr('ng-disabled', 'true');
-        });
+        var options = {
+          disabled: true
+        };
+        
+        if(attrs.blockDisable){
+          angular.extend(options, angular.fromJson(attrs.blockDisable));
+        }
+        
+        if(options.elements && options.elements.length){
+          angular.forEach(options.elements, function(e) { disableElement(element.find(e)) });
+        }
+        else {
+          var defaultElements = ['input','textarea','select','button'];
+          angular.forEach(defaultElements, function(e) { disableElement(element.find(e)) });
+        }
+        
+        function disableElement(target) {
+          angular.forEach(target, function(e){ 
+            angular.element(e).attr('ng-disabled', options.disabled); 
+          });
+        }
       }
     }
 })();
