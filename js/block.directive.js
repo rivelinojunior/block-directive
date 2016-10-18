@@ -8,7 +8,6 @@
     function BlockDisable() {
       var directive = {
         restrict: 'A',
-        scope: {},
         compile: compile
       };
 
