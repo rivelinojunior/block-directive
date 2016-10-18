@@ -5,8 +5,7 @@
     .module('riverjr.block-disable')
     .directive('blockDisable', BlockDisable);
 
-     /** @ngInject */
-    function BlockDisable($filter) {
+    function BlockDisable() {
       var ddo = {
         restrict: 'A',
         scope: {},
