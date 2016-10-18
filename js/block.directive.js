@@ -6,13 +6,13 @@
     .directive('blockDisable', BlockDisable);
 
     function BlockDisable() {
-      var ddo = {
+      var directive = {
         restrict: 'A',
         scope: {},
         compile: compile
       };
 
-      return ddo;
+      return directive;
 
       function compile(element, attrs) {
         var options = angular.fromJson(attrs['sgppBlockOptions']);
