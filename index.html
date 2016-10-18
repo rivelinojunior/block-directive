@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sgpp">
+<head>
+	<title>Block Directive</title>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script>
+		angular.module("sgpp", []);
+	</script>
+	<script type="text/javascript" src="js/block.directive.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body >
+	<div class="content">
+	<div class="row">
+		<hr>
+		<div class="col-md-offset-3 col-md-6">
+			<h1>Form</h1>
+			<form>
+			  <div class="form-group" sgpp-block sgpp-block-options='{ "disabled": true, "hide": false, "elements": ["input", "textarea"] }'>
+			    <label for="exampleInputEmail1">Email: {{email}}</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" ng-model="email" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password</label>
+			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="textArea">Description</label>
+			    <textarea class="form-control" id="textArea" rows="3"></textarea>
+			  </div>
+
+			</form>
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>
