@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('sgpp')
-    .directive('sgppBlock', SGPPBlock);
+    .module('riverjr.block-disable')
+    .directive('blockDisable', BlockDisable);
 
      /** @ngInject */
-    function SGPPBlock($filter) {
+    function BlockDisable($filter) {
       var ddo = {
         restrict: 'A',
         scope: {},
