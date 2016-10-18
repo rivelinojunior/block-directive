@@ -15,25 +15,26 @@
 
       function compile(element, attrs) {
         var options = {
-          disabled: true
+          disabled: true,
+          hide: false,
+          elements: ['input','textarea','select','button']
         };
         
-        if(attrs.blockDisable){
+        if(attrs.blockDisable) {
           angular.extend(options, angular.fromJson(attrs.blockDisable));
-        }
-        
-        if(options.elements && options.elements.length){
-          angular.forEach(options.elements, function(e) { disableElement(element.find(e)) });
-        }
-        else {
-          var defaultElements = ['input','textarea','select','button'];
-          angular.forEach(defaultElements, function(e) { disableElement(element.find(e)) });
-        }
-        
-        function disableElement(target) {
-          angular.forEach(target, function(e){ 
-            angular.element(e).attr('ng-disabled', options.disabled); 
+          angular.forEach(options.elements, function(e) { 
+            var target = element.find(e);
+            disableElement(target);
+            hideElement(target); 
           });
+        }
+             
+        function disableElement(target) {
+          target.attr('ng-disabled', options.disabled);
+        }
+
+        function hideElement(target) {
+          target.attr('ng-hide', options.hide);
         }
       }
     }
