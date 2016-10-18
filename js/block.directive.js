@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('riverjr.block-disable')
+    .module('riverjr.blockdisable', [])
     .directive('blockDisable', BlockDisable);
 
     function BlockDisable() {
