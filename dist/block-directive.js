@@ -39,6 +39,9 @@
         }
         
         return function postLink(scope) {
+          scope.disable = scope.disable || false;
+          scope.hide = scope.hide || false;
+          
           angular.forEach(elements, function(e) { 
             var target = element.find(e);
             $compile(target)(scope);
