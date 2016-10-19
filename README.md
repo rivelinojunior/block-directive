@@ -37,55 +37,55 @@ It will disable all form elements inside the block that had the directive added.
 
 ## Options
 
-Give a json value to the `block-disable` attribute for some options:
-
-```html
-<form action="get" block-disable="{ ... }">
-
-. . .
-
-</form>
-```
-
-### **disable**
+### **bd-disable**
 Disables the selected elements by adding ng-disabled directive.
 
-**Type:** boolean  
-**Default:** `true`
+**Receives:** value or variable
+**Type:** boolean
+**Default:** `false`
 
 ```html
-<form action="get" block-disable="{ disable: true }">
-
+<form action="get" block-disable bd-disable="model.disable">
 . . .
-
+</form>
+```
+or
+```html
+<form action="get" block-disable bd-disable="true">
+. . .
 </form>
 ```
 
-### **hide**
+
+### **bd-hide**
 Hides the selected elements by adding ng-hide directive.
 
+**Receives:** value or variable
 **Type:** boolean  
 **Default:** `false`
 
 ```html
-<form action="get" block-disable="{ hide: true }">
-
+<form action="get" block-disable bd-hide="model.hide">
 . . .
-
+</form>
+```
+or
+```html
+<form action="get" block-disable bd-hide="true">
+. . .
 </form>
 ```
 
-### **elements**
-An array of strings with a css selector to each element to be targeted by the directive
+### **block-disable**
+Defines the targeted elements for disabling/hiding
 
-**Type:** array  
+**Receives:** value
+**Type:** string (with a valid json array)
 **Default:** `['input','textarea','select','button']`
 
 ```html
-<form action="get" block-disable="{ elements: ['texarea', 'button'] }">
-
+<form action="get" block-disable="['textarea', 'button']">
 . . .
-
 </form>
 ```
 
