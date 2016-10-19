@@ -1,0 +1,20 @@
+{
+  "name": "block-directive",
+  "homepage": "https://github.com/rivelinojunior/block-directive",
+  "authors": [
+    "Rivelino Junior"
+  ],
+  "description": "An AngularJS directive to mass disable or hide elements",
+  "main": "dist/block-directive.js",
+  "keywords": [
+    "angular",
+    "directive",
+    "disable",
+    "form",
+    "inputs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

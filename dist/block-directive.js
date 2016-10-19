@@ -15,7 +15,7 @@
 
       function compile(element, attrs) {
         var options = {
-          disabled: true,
+          disable: true,
           hide: false,
           elements: ['input','textarea','select','button']
         };
@@ -30,7 +30,7 @@
         }
              
         function disableElement(target) {
-          target.attr('ng-disabled', options.disabled);
+          target.attr('ng-disabled', options.disable);
         }
 
         function hideElement(target) {
