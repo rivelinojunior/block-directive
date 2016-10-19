@@ -9,8 +9,8 @@
       var directive = {
         restrict: 'A',
         scope: {
-          hide: '=bdHide',
-          disable: '=bdDisable'
+          hide: '<bdHide',
+          disable: '<bdDisable'
         },
         compile: compile
       };
